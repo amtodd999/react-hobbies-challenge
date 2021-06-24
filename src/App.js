@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import {userState, useState} from 'react';
+import Input from './components/Input';
 
-function App() {
+const App = () => {
+  const [name, setName] = useState('Enter Name');
+  const [age, setAge] = useState('Enter Age');
+  const [hobbies, setHobbies] = useState('Enter Hobby');
+  
+// const nameChangeHandler = (event) => {
+//   setName(event.target.value);
+//   console.log(name)
+// }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Input age={age} name={name} hobbies={ hobbies} />
+
     </div>
   );
 }
